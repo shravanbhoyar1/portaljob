@@ -9,4 +9,3 @@ import java.util.UUID;
 @Repository
 public interface JobsRepo extends JpaRepository<jobs, UUID> {
 }
-///ghgjhgsgs/
