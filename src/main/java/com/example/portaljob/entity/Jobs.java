@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class jobs {
+public class Jobs {
     @Id
     UUID jobId;
 
