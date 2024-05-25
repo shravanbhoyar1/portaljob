@@ -3,6 +3,7 @@ package com.example.portaljob.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -26,6 +27,9 @@ public class Users {
     boolean isAdmin;
 
     boolean isHr;
+
+    @Transient
+    String jwt;
 
     @CreationTimestamp
     @Column(name = "created_time")
