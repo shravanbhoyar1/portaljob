@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -20,4 +21,10 @@ public class JobController {
     public String postJob(@RequestBody Jobs jobs, @PathVariable("id") UUID userId){
         return    jobService.postJob(jobs,userId);
     }
+
+    @GetMapping("/getAllJobs")
+    public List<Jobs> getAllJobs(){
+        return jobService.getAllActiveJobs();
+    }
+
 }

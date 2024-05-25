@@ -6,7 +6,10 @@ import com.example.portaljob.util.JobUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
+
+import static java.lang.Boolean.TRUE;
 
 @Service
 public class JobServiceImpl implements JobService{
@@ -23,6 +26,11 @@ public class JobServiceImpl implements JobService{
             return "jobs Posted";
         }
         return "current User is not Hr";
+
+    }
+
+    public List<Jobs> getAllActiveJobs(){
+        return jobsRepo.findByActiveAndStatus(Boolean.TRUE,"Approved");
 
     }
 }
